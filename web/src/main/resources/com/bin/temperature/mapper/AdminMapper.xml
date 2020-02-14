@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+namespace : 命名空间，根据namespace区分不同的sql映射文件的。暂时，这个namespace可以随意编写
+如果使用的是接口式编程，对应的namespace必须是接口的全类名
+-->
+<mapper namespace="com.bin.temperature.mapper.AdminMapper">
+    <!--Admin validateAdmin(Admin admin);-->
+    <select id="validateAdmin" resultType="com.bin.temperature.bean.Admin">
+        SELECT * FROM admin WHERE loginAccount = #{loginAccount} AND password = #{password}
+    </select>
+
+</mapper>
